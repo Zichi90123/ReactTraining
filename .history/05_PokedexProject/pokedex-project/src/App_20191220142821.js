@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import Pokegame from './Pokegame'
+import Pokecard from './Pokecard'
 
 function App() {
   return (
     <div className="App">
-      <Pokegame
+      <Pokecard 
+      id={4}
+      name="Charmender"
+      type="fire"
+      exp={62}
       />
     </div>
   );
