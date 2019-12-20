@@ -11,4 +11,4 @@ console.log(`Here you go: ${fruit}`);
 // Remove the fruit from the array of fruits
 let remaining = remove(foods, fruit)
 // Log the message "I'm sorry, we're all out. We have FRUITSLEFT left" 
-console.log(`I'm sorry, we're all out. We have ${remaining.length} other foods left`)
+console.log(`I'm sorry, we're all out. We have ${remaining.length} left`)
