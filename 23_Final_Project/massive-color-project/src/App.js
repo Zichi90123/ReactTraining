@@ -8,7 +8,7 @@ import PaletteList from './PaletteList';
 class App extends Component {
   findPalette(id) {
     return seedColors.find(function (palette) {
-      return palette.id == id
+      return palette.id === id
     })
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => <PaletteList palettes={seedColors} />}
+          render={(routeProps) => <PaletteList palettes={seedColors} {...routeProps} />}
         />
         <Route
           exact

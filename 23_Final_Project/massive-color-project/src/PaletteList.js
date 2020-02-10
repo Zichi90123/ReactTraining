@@ -9,7 +9,7 @@ const styles = {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center"
-    }, 
+    },
     container: {
         width: "50%",
         display: "flex",
@@ -39,6 +39,12 @@ class PaletteList extends Component {
         this.state = {
 
         }
+
+        this.goToPalette = this.goToPalette.bind(this);
+    }
+
+    goToPalette(id) {
+        this.props.history.push(`/palette/${id}`)
     }
 
     render() {
@@ -51,7 +57,10 @@ class PaletteList extends Component {
                     </nav>
                     <div className={classes.palettes}>
                         {palettes.map(palette => (
-                            <MiniPalette {...palette} />
+                            <MiniPalette
+                                {...palette}
+                                handleClick={() => this.goToPalette(palette.id)}
+                            />
                         ))}
                     </div>
                 </div>
