@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
-import TextField from '@material-ui/core/TextField';
+import {Picker} from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css'
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -42,19 +43,21 @@ class PaletteMetaForm extends Component {
 
     render() {
         const { newPaletteName, open } = this.state
-        const { handleSubmit } = this.props
+        const { handleSubmit, hideForm } = this.props
         return (
             <Dialog
                 open={open}
                 onClose={this.handleClose}
                 aria-labelledby="form-dialog-title"
+                onClose={hideForm}
             >
                 <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
                 <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
                     <DialogContent>
                         <DialogContentText>
                             Please enter a name for your new palette. Make sure it's unique!
-                            </DialogContentText>
+                        </DialogContentText>
+                        <Picker />
                         <TextValidator
                             label="Palette Name"
                             name="newPaletteName"
@@ -67,16 +70,16 @@ class PaletteMetaForm extends Component {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={hideForm} color="primary">
                             Cancel
-                            </Button>
+                        </Button>
                         <Button
                             variant="contained"
                             color="primary"
                             type="submit"
                         >
                             Save Palette
-                            </Button>
+                        </Button>
                     </DialogActions>
                 </ValidatorForm>
             </Dialog>
