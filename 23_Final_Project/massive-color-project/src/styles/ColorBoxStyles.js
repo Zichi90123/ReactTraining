@@ -117,7 +117,7 @@ export default {
             marginBottom: 0,
             padding: '1rem',
             textTransform: 'uppercase',
-            [sized.down("xs")]: {
+            [sizes.down("xs")]: {
                 fontSize: "6rem"
             }
         },
