@@ -11,6 +11,7 @@ import DraggableColorList from './DraggableColorList';
 import { arrayMove } from 'react-sortable-hoc';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
+import seedColors from './seedColors'
 
 import styles from './styles/NewPaletteFormStyles'
 
@@ -22,7 +23,7 @@ class NewPaletteForm extends Component {
         super(props)
         this.state = {
             open: true,
-            colors: this.props.palettes[0].colors,
+            colors: seedColors[0].colors,
         }
         this.addNewColor = this.addNewColor.bind(this);
         this.clearColors = this.clearColors.bind(this);
