@@ -56,7 +56,7 @@ class Navbar extends Component {
                             <div className={classes.searchIcon}>
                                 <SearchIcon />
                             </div>
-                            <InputBase placeholder={`${search}...`} classes={{
+                            <InputBase placeholder={`${search}`} classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput
                             }} />
